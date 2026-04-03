@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beech House Veterinary Clinic Ltd | Premium Pet Care in Sheffield</title>
+    <meta name="description" content="Beech House Veterinary Clinic Ltd offers premium, compassionate veterinary care in High Green, Sheffield. From routine consultations to emergency care, trust us with your beloved pets.">
+    <meta name="keywords" content="veterinarian Sheffield, vet High Green, pet care Sheffield, animal clinic Sheffield, veterinary services, dog vet, cat vet, emergency vet, General Consultations, Vaccinations, Dental Care, Surgery, Microchipping">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* CSS Reset & Variables */
+        :root {
+            --primary-dark: #1a1a2e;
+            --accent-blue: #4a90d9;
+            --background-light: #f8f9fa;
+            --text-dark: #333;
+            --text-light: #fff;
+            --gap-base: 1.5rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--background-light);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Inter', sans-serif;
+            color: var(--primary-dark);
+            line-height: 1.2;
+            margin-bottom: 0.8em;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--accent-blue);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--gap-base);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-blue);
+            color: var(--text-light);
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #3a7acb; /* Slightly darker accent */
+            transform: translateY(-2px);
+        }
+
+        .section-heading {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .section-heading::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-blue);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: var(--primary-dark);
+            padding: 1rem var(--gap-base);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-brand {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand .logo-icon {
+            margin-right: 0.5rem;
+            font-size: 1.8rem;
+            color: var(--accent-blue);
+        }
+
+        .nav-links {
+            display: none; /* Hidden by default on mobile */
+            gap: var(--gap-base);
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            font-weight: 500;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-blue);
+            border-bottom: 2px solid var(--accent-blue);
+        }
+
+        .hamburger-menu {
+            display: block; /* Visible on mobile */
+            font-size: 1.8rem;
+            color: var(--text-light);
+            cursor: pointer;
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(26, 26, 46, 0.95);
+            z-index: 999;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .mobile-menu-overlay .close-btn {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 2.5rem;
+            color: var(--text-light);
+            cursor: pointer;
+        }
+
+        .mobile-menu-overlay .mobile-nav-links {
+            text-align: center;
+        }
+
+        .mobile-menu-overlay .mobile-nav-links a {
+            display: block;
+            color: var(--text-light);
+            font-size: 1.8rem;
+            padding: 1rem 0;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu-overlay .mobile-nav-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(26, 26, 46, 0.6), rgba(26, 26, 46, 0.6)), url('https://source.unsplash.com/featured/1600x900/?Veterinarian,professional') no-repeat center center/cover;
+            color: var(--text-light);
+            text-align: center;
+            padding: 8rem 0;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-attachment: fixed; /* Parallax effect */
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInSlideUp 1s forwards;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes fadeInSlideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero .btn {
+            font-size: 1.1rem;
+            padding: 1rem 2.5rem;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 5rem 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Services Section */
+        .services {
+            background-color: var(--background-light);
+            padding-bottom: 3rem; /* Adjusted for cards */
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--gap-base);
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background-color: var(--text-light);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .service-card .icon {
+            font-size: 3.5rem;
+            color: var(--accent-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            flex-grow: 1; /* Allow description to take space */
+        }
+
+        .service-card .learn-more {
+            font-weight: 600;
+            color: var(--accent-blue);
+            transition: color 0.3s ease;
+        }
+
+        .service-card .learn-more:hover {
+            color: var(--primary-dark);
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--text-light);
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--gap-base) * 2;
+        }
+
+        .about-text {
+            max-width: 700px;
+            text-align: center;
+        }
+
+        .about-text h2 {
+            text-align: center;
+        }
+        
+        .about-image {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            background-color: var(--background-light);
+            text-align: center;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--gap-base);
+            margin-top: 3rem;
+        }
+
+        .review-card {
+            background-color: var(--text-light);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: left;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        }
+
+        .review-card .quote-icon {
+            font-size: 3rem;
+            color: var(--accent-blue);
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            opacity: 0.1;
+        }
+
+        .review-card p {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: #555;
+            font-size: 1.05rem;
+            padding-top: 1.5rem; /* Space for quote icon */
+        }
+
+        .review-card .author {
+            font-weight: 600;
+            color: var(--primary-dark);
+            font-size: 1rem;
+        }
+
+        .review-card .stars {
+            color: #ffc107; /* Gold color for stars */
+            margin-bottom: 0.5rem;
+        }
+
+        /* New Features Section */
+        .features {
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        .features .section-heading {
+            color: var(--text-light);
+        }
+        .features .section-heading::after {
+            background-color: var(--accent-blue);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--gap-base);
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background-color: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .feature-card .icon {
+            font-size: 3.5rem;
+            color: var(--accent-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--text-light);
+        }
+
+        .contact-content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--gap-base) * 2;
+        }
+
+        .contact-info {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+        }
+
+        .contact-info p i {
+            color: var(--accent-blue);
+            font-size: 1.3rem;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--background-light);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .contact-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: var(--primary-dark);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.2);
+            outline: none;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact-form .btn {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary-dark);
+            color: var(--background-light);
+            padding: 4rem 0 2rem;
+            font-size: 0.95rem;
+        }
+
+        .footer .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--gap-base) * 2;
+            text-align: center;
+        }
+
+        .footer-brand {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .footer-brand .logo-icon {
+            margin-right: 0.5rem;
+            font-size: 2rem;
+            color: var(--accent-blue);
+        }
+
+        .footer-section h4 {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        .footer-section h4::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent-blue);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.7rem;
+        }
+
+        .footer-section ul li a {
+            color: var(--background-light);
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--accent-blue);
+        }
+        
+        .footer-contact-info p {
+            margin-bottom: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+        }
+
+        .footer-contact-info p i {
+            color: var(--accent-blue);
+            font-size: 1.1rem;
+        }
+
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: var(--gap-base);
+            right: var(--gap-base);
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            color: var(--text-light);
+            border-radius: 50%;
+            text-align: center;
+            font-size: 2rem;
+            line-height: 60px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+            background-color: #1DA851;
+        }
+
+        /* Responsive Design (Mobile-first, then larger screens) */
+        @media (min-width: 768px) {
+            .navbar .container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .nav-links {
+                display: flex; /* Show nav links on larger screens */
+            }
+
+            .hamburger-menu {
+                display: none; /* Hide hamburger on larger screens */
+            }
+
+            .hero h1 {
+                font-size: 4rem;
+            }
+
+            .hero p {
+                font-size: 1.5rem;
+            }
+
+            .section-heading {
+                font-size: 3rem;
+            }
+
+            .about-content {
+                flex-direction: row;
+                text-align: left;
+                gap: 5rem;
+            }
+            .about-text {
+                text-align: left;
+            }
+            .about-text h2 {
+                text-align: left;
+            }
+
+            .about-image {
+                flex-shrink: 0;
+                width: 40%;
+            }
+            .about-image img {
+                height: 100%; /* Adjust as needed */
+            }
+
+            .reviews-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .features-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 3 or 4 columns */
+            }
+
+            .contact-content {
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 3rem;
+            }
+
+            .contact-info, .contact-form {
+                width: 48%; /* Adjust for spacing */
+                margin: 0;
+            }
+            .contact-info {
+                text-align: left;
+            }
+            .contact-info p {
+                justify-content: flex-start;
+            }
+            .contact-form h3 {
+                text-align: left;
+            }
+
+            .footer .container {
+                grid-template-columns: repeat(4, 1fr);
+                text-align: left;
+            }
+            .footer-brand, .footer-section h4, .footer-contact-info p {
+                justify-content: flex-start;
+            }
+            .footer-section h4::after {
+                margin-left: 0;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hero {
+                padding: 10rem 0;
+                min-height: 80vh;
+            }
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+            .features-grid {
+                grid-template-columns: repeat(4, 1fr); /* 4 columns on large screens */
+            }
+            .services-grid {
+                 grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .section-heading {
+                font-size: 2rem;
+            }
+            .hero {
+                padding: 6rem 0;
+                min-height: 60vh;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
+            }
+            .about-image img {
+                height: 300px; /* Adjust height for smaller screens */
+            }
+            .footer .container {
+                grid-template-columns: 1fr; /* Stack columns on small screens */
+                text-align: center;
+            }
+            .footer-brand, .footer-section h4, .footer-contact-info p {
+                justify-content: center;
+            }
+            .footer-section h4::after {
+                margin: 0.5rem auto 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Navigation Bar -->
+    <header class="navbar">
+        <div class="container">
+            <a href="#hero" class="navbar-brand">
+                <i class="fas fa-paw logo-icon"></i> Beech House Veterinary Clinic Ltd
+            </a>
+            <nav class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#features">Features</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <div class="close-btn" id="closeMobileMenu"><i class="fas fa-times"></i></div>
+        <nav class="mobile-nav-links">
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#features">Features</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Expert & Compassionate Veterinary Care for Your Pet</h1>
+            <p>At Beech House, we provide exceptional, personalized care for your beloved companions in High Green, Sheffield. Your pet's health and happiness are our priority.</p>
+            <a href="#contact" class="btn">Book a Free Consultation</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container text-center">
+            <h2 class="section-heading">Our Comprehensive Veterinary Services</h2>
+            <p style="max-width: 800px; margin: 0 auto 3rem; font-size: 1.15rem; color: #555;">Beech House Veterinary Clinic Ltd is dedicated to offering a full range of services to keep your pet healthy and thriving. Each service is tailored to provide the best possible care.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-stethoscope icon"></i>
+                    <h3>General Consultations</h3>
+                    <p>Thorough health assessments and preventative advice to ensure your pet's overall well-being and catch issues early.</p>
+                    <a href="#contact" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-shield-virus icon"></i>
+                    <h3>Vaccinations</h3>
+                    <p>Protect your pet from common and serious diseases with our tailored vaccination programs and booster reminders.</p>
+                    <a href="#contact" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-tooth icon"></i>
+                    <h3>Dental Care</h3>
+                    <p>From routine cleaning to advanced procedures, we ensure your pet maintains a healthy and pain-free smile for life.</p>
+                    <a href="#contact" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-scalpel icon"></i>
+                    <h3>Surgery</h3>
+                    <p>Safe and effective surgical solutions for a range of conditions, performed with the utmost care and advanced techniques.</p>
+                    <a href="#contact" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-heartbeat icon"></i>
+                    <h3>Emergency Care</h3>
+                    <p>Urgent medical attention when your pet needs it most, providing critical care with compassion and expertise.</p>
+                    <a href="#contact" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-microchip icon"></i>
+                    <h3>Microchipping</h3>
+                    <p>Permanent identification to help reunite you with your lost pet quickly and safely, a vital part of responsible pet ownership.</p>
+                    <a href="#contact" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-heading text-center">About Beech House Veterinary Clinic Ltd</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p style="font-size: 1.15rem; color: #555; margin-bottom: 1.5rem;">
+                        Located at 106 Greengate Ln, High Green, Sheffield S35 3GT, United Kingdom, Beech House Veterinary Clinic Ltd is a trusted name in local pet healthcare. We are dedicated to providing the highest standard of veterinary medicine with a warm, personal touch. Our experienced team treats every animal with the kindness and respect they deserve.
+                    </p>
+                    <p style="font-size: 1.15rem; color: #555; margin-bottom: 1.5rem;">
+                        We believe in fostering a strong partnership with pet owners, offering clear communication and comprehensive advice to empower you in making the best decisions for your pet's health. From routine check-ups and vaccinations to complex surgery and emergency care, we are here for you and your animal companions every step of the way.
+                    </p>
+                    <a href="#contact" class="btn">Get in Touch</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://source.unsplash.com/featured/900x600/?Veterinarian,team" alt="Veterinary Team at Beech House Clinic">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2 class="section-heading">What Our Clients Say</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"Beech House Vets provided outstanding Emergency Care for our cat, Mittens, after an accident. The team at 106 Greengate Ln was incredibly supportive, and their quick action truly saved her life. We're so grateful for their expertise and compassion."</p>
+                    <div class="author">- Sarah L., High Green, Sheffield</div>
+                </div>
+                <div class="review-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"We always bring our dog, Buster, for his General Consultations and Vaccinations to Beech House. The vets are so gentle and explain everything clearly. It's truly a trustworthy clinic right here in Sheffield."</p>
+                    <div class="author">- David R., Sheffield S35 3GT</div>
+                </div>
+                <div class="review-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"Our rabbit needed Dental Care, and Beech House Vets handled it with such professionalism. The post-op care advice was excellent, and he's back to himself. Highly recommend their services at Greengate Lane!"</p>
+                    <div class="author">- Emily T., Chapeltown, Sheffield</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-heading">Now Available at Beech House Vets!</h2>
+            <p style="max-width: 800px; margin: 0 auto 3rem; font-size: 1.15rem; color: rgba(255, 255, 255, 0.8);">We're constantly enhancing our clinic to provide you and your pet with the most convenient and modern care experience possible.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-comments icon"></i>
+                    <h3>Live Chat</h3>
+                    <p>Get instant support and answers to your questions, whenever you need it, 24/7.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-calendar-check icon"></i>
+                    <h3>Online Booking</h3>
+                    <p>Schedule your pet's appointments directly from our website at your convenience, without calling.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-robot icon"></i>
+                    <h3>AI Assistant</h3>
+                    <p>Our intelligent assistant is ready to help by answering common questions automatically and efficiently.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-phone-volume icon"></i>
+                    <h3>AI Voice Agent</h3>
+                    <p>Ensure every call is answered promptly, so you never miss a vital connection with our clinic.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fab fa-whatsapp icon"></i>
+                    <h3>WhatsApp Integration</h3>
+                    <p>Receive instant replies and communicate seamlessly with us through your preferred messaging app.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fab fa-google icon"></i>
+                    <h3>Live Google Reviews</h3>
+                    <p>See our latest client feedback updated automatically on our site, reflecting our commitment to excellence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-heading text-center">Contact Beech House Veterinary Clinic Ltd</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> 106 Greengate Ln, High Green, Sheffield S35 3GT, United Kingdom</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+441142844855">+44 114 284 4855</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:beech.house.vets@zen.co.uk">beech.house.vets@zen.co.uk</a></p>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Us an Enquiry</h3>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Your Phone (Optional)</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service of Interest</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a Service</option>
+                                <option value="General Consultations">General Consultations</option>
+                                <option value="Vaccinations">Vaccinations</option>
+                                <option value="Dental Care">Dental Care</option>
+                                <option value="Surgery">Surgery</option>
+                                <option value="Emergency Care">Emergency Care</option>
+                                <option value="Microchipping">Microchipping</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Submit Enquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-section">
+                <a href="#hero" class="footer-brand">
+                    <i class="fas fa-paw logo-icon"></i> Beech House Vets
+                </a>
+                <p>Premium, compassionate veterinary care in High Green, Sheffield.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#reviews">Testimonials</a></li>
+                    <li><a href="#features">New Features</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="#services">General Consultations</a></li>
+                    <li><a href="#services">Vaccinations</a></li>
+                    <li><a href="#services">Dental Care</a></li>
+                    <li><a href="#services">Surgery</a></li>
+                    <li><a href="#services">Emergency Care</a></li>
+                    <li><a href="#services">Microchipping</a></li>
+                </ul>
+            </div>
+            <div class="footer-section footer-contact-info">
+                <h4>Get in Touch</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 106 Greengate Ln, High Green, Sheffield S35 3GT, UK</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+441142844855">+44 114 284 4855</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:beech.house.vets@zen.co.uk">beech.house.vets@zen.co.uk</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; <span id="currentYear"></span> Beech House Veterinary Clinic Ltd. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/441142844855" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Close mobile menu if open
+                const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+                if (mobileMenuOverlay.classList.contains('active')) {
+                    mobileMenuOverlay.classList.remove('active');
+                    document.body.style.overflow = ''; // Re-enable scrolling
+                }
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile Menu Toggle
+        const hamburgerMenu = document.getElementById('hamburgerMenu');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+
+        hamburgerMenu.addEventListener('click', () => {
+            mobileMenuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+        });
+
+        closeMobileMenu.addEventListener('click', () => {
+            mobileMenuOverlay.classList.remove('active');
+            document.body.style.overflow = ''; // Re-enable scrolling
+        });
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Intersection Observer for fade-in animations
+        const sections = document.querySelectorAll('section');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15 // Adjust as needed
+        };
+
+        const sectionObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Stop observing once visible
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+
+        // Add 'visible' class to hero immediately
+        document.getElementById('hero').classList.add('visible');
+    </script>
+</body>
+</html>
